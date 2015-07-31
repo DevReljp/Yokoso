@@ -1,0 +1,19 @@
+{
+  "name": "Yokoso",
+  "version": "0.0.0",
+  "authors": [
+    "Atsushi Nakatsugawa <atsushi@moongift.jp>"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
