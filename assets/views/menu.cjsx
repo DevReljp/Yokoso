@@ -12,7 +12,7 @@ module.exports = React.createClass
     console.log e
   render: ->
     me = this
-    <Nav bsStyle='pills' activeKey={1} onSelect={me.handleSelect}>
+    <Nav bsStyle='pills' activeKey={2} onSelect={me.handleSelect}>
       <NavItem eventKey={1} href='/home'>NavItem 1 content</NavItem>
       <NavItem eventKey={2} title='Item'>NavItem 2 content</NavItem>
       <NavItem eventKey={3} disabled={true}>NavItem 3 content</NavItem>

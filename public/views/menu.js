@@ -23,7 +23,7 @@ module.exports = React.createClass({
     me = this;
     return React.createElement(Nav, {
       "bsStyle": 'pills',
-      "activeKey": 1.,
+      "activeKey": 2.,
       "onSelect": me.handleSelect
     }, React.createElement(NavItem, {
       "eventKey": 1.,

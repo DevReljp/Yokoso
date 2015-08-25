@@ -1,5 +1,5 @@
 'use strict';
-var Account, App, Dashboard, Menu, React, Router, routes;
+var Account, App, Dashboard, Menu, React, Router, SignIn, routes;
 
 React = require('react');
 
@@ -13,6 +13,8 @@ Menu = require('./views/menu.js');
 
 Dashboard = require('./views/dashboard.js');
 
+SignIn = require('./views/sign_in.js');
+
 routes = module.exports = React.createElement(Router.Route, {
   "path": '/',
   "handler": App
@@ -23,4 +25,8 @@ routes = module.exports = React.createElement(Router.Route, {
   "path": '/sign_up',
   "name": "account",
   "handler": Account
+}), React.createElement(Router.Route, {
+  "path": '/sign_in',
+  "name": "sign_in",
+  "handler": SignIn
 }));

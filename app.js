@@ -21,8 +21,16 @@ require('node-jsx').install();
 var path = require('path');
 var express = require('express');
 var renderer = require('react-engine');
+var bodyParser = require("body-parser");
+var mongoose = require('mongoose');
 
 var app = express();
+
+mongoose.connect('mongodb://localhost/yokoso');
+var db = mongoose.connection;
+db.once('open', function (callback) {
+  // yay!
+});
 
 // create the view engine with `react-engine`
 var engine = renderer.server.create({
@@ -45,6 +53,7 @@ app.set('view', renderer.expressView);
 //expose public folder as static assets
 app.use(express.static(__dirname + '/public'));
 app.use(require('connect-livereload')());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function(req, res) {
   res.render(req.url, {
@@ -58,6 +67,14 @@ app.get('/sign_up', function(req, res) {
   });
 });
 
+app.get('/sign_in', function(req, res) {
+  res.render(req.url, {
+    title: 'Sign in - Yokoso'
+  });
+});
+
+var AccountsController = require('./dest/controllers/accounts_controller')(app, mongoose);
+
 // 404 template
 app.use(function(req, res) {
   res.render('404.js', {
@@ -66,6 +83,7 @@ app.use(function(req, res) {
   });
 });
 
+
 var server = app.listen(3000, function() {
 
   var host = server.address().address;
@@ -73,3 +91,4 @@ var server = app.listen(3000, function() {
 
   console.log('Example app listening at http://%s:%s', host, port);
 });
+module.exports = server

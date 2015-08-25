@@ -12,4 +12,3 @@ module.exports = React.createClass
       <Link to="account">Sign up</Link><br />
       <a href='/some_unknown'>Click to go to an unhandled route</a>
     </div>
-

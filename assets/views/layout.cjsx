@@ -2,6 +2,8 @@
 
 React = require 'react'
 Menu = require './menu.js'
+Bootstrap = require 'react-bootstrap'
+Row = Bootstrap.Row
 
 module.exports = React.createClass
   render: ->
@@ -16,8 +18,10 @@ module.exports = React.createClass
       <body>
         <div class="container">
           <Menu />
-          {this.props.children}
-	</div>
+          <Row>
+            {this.props.children}
+          </Row>
+	      </div>
       </body>
       <script src='/javascripts/application.js'></script>
     </html>

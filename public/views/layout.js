@@ -1,9 +1,13 @@
 'use strict';
-var Menu, React;
+var Bootstrap, Menu, React, Row;
 
 React = require('react');
 
 Menu = require('./menu.js');
+
+Bootstrap = require('react-bootstrap');
+
+Row = Bootstrap.Row;
 
 module.exports = React.createClass({
   render: function() {
@@ -14,7 +18,7 @@ module.exports = React.createClass({
       "href": "/stylesheets/application.css"
     })), React.createElement("body", null, React.createElement("div", {
       "class": "container"
-    }, React.createElement(Menu, null), this.props.children)), React.createElement("script", {
+    }, React.createElement(Menu, null), React.createElement(Row, null, this.props.children))), React.createElement("script", {
       "src": '/javascripts/application.js'
     }));
   }
