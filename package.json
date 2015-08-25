@@ -1,9 +1,21 @@
 {
-  "name": "react-engine-example-complex",
-  "main": "index.js",
+  "name": "Yokoso",
+  "main": "app.js",
+  "description": "Yokoso is a CMS for Developer Relations (DevRel).",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DevReljp/Yokoso.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/DevReljp/Yokoso/master/LICENSE"
+    }
+  ],  
   "scripts": {
-    "start": "npm run browserify && node index.js",
-    "browserify": "browserify -t reactify -t require-globify public/index.js -o public/bundle.js"
+    "start": "gulp",
+    "text":  "gulp test"
   },
   "dependencies": {
     "bcrypt": "^0.8.4",
