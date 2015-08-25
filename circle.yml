@@ -1,3 +1,6 @@
+machine:
+  services:
+    - mongodb
 test:
   override:
-    - exit 0
+    - gulp test
