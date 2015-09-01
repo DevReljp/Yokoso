@@ -1,5 +1,5 @@
 'use strict';
-var Addons, Alert, Bootstrap, ButtonInput, Col, Input, Link, React, Router;
+var Addons, Alert, Bootstrap, ButtonInput, Col, Input, Link, Menu, React, Router;
 
 React = require('react');
 
@@ -18,6 +18,8 @@ Input = Bootstrap.Input;
 ButtonInput = Bootstrap.ButtonInput;
 
 Alert = Bootstrap.Alert;
+
+Menu = require('./menu');
 
 module.exports = React.createClass({
   displyName: 'sign_in',
@@ -40,7 +42,7 @@ module.exports = React.createClass({
     me = this;
     return React.createElement("div", {
       "id": 'sign_in'
-    }, React.createElement(Col, {
+    }, React.createElement(Menu, null), React.createElement(Col, {
       "md": 6.,
       "xsOffset": 3.
     }, React.createElement("h1", null, "Sign In"), React.createElement("form", {

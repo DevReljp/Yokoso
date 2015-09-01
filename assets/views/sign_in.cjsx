@@ -4,11 +4,11 @@ Addons = require 'react/addons'
 Router = require 'react-router'
 Bootstrap = require 'react-bootstrap'
 Link = Router.Link
-# <Col xs={6} xsOffset={6} />
 Col = Bootstrap.Col
 Input = Bootstrap.Input
 ButtonInput = Bootstrap.ButtonInput
 Alert = Bootstrap.Alert
+Menu = require './menu'
 
 module.exports = React.createClass
   displyName: 'sign_in'
@@ -25,6 +25,7 @@ module.exports = React.createClass
   render: ->
     me = this
     <div id='sign_in'>
+      <Menu />
       <Col md={6} xsOffset={3}>
         <h1>Sign In</h1>
         <form onSubmit={me.submit_form}>

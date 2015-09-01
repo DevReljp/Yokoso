@@ -1,11 +1,30 @@
-#### a complex express app to demonstrate the usage of react-engine
+# Yokoso
 
-##### Uses react views and react-router views
+Yokoso is a platform or CMS for Developer Relations. You can launch Developer's site quickly for your service.
 
-###### to run
-```shell
-cd `into_this_dir`
-npm install
-npm start
-open http://localhost:3000
+## Architecture
+
+- node.js
+- React x Cjsx x Server side rendering
+- Express
+- Coffee Script
+- gulp
+- MongoDB
+
+## Usage
+
 ```
+$ gulp start-mongodb &
+$ gulp
+$ open http://localhost:3000/
+```
+
+## License
+
+MIT License
+
+## Author
+
+[moongift](https://github.com/moongift)
+
+

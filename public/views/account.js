@@ -1,5 +1,5 @@
 'use strict';
-var Addons, Alert, Bootstrap, ButtonInput, Col, Input, Link, Navigation, React, Router, TransitionHook;
+var Addons, Alert, Bootstrap, ButtonInput, Col, Input, Link, Menu, Navigation, React, Router, TransitionHook;
 
 React = require('react');
 
@@ -10,6 +10,8 @@ Router = require('react-router');
 Bootstrap = require('react-bootstrap');
 
 Link = Router.Link;
+
+Menu = require('./menu');
 
 Col = Bootstrap.Col;
 
@@ -110,8 +112,8 @@ module.exports = React.createClass({
     var me;
     me = this;
     return React.createElement("div", {
-      "id": 'account'
-    }, React.createElement(Col, {
+      "id": 'App'
+    }, React.createElement(Menu, null), React.createElement(Col, {
       "md": 6.,
       "xsOffset": 3.
     }, React.createElement("h1", null, "Sign up"), React.createElement("form", {

@@ -1,5 +1,5 @@
 'use strict';
-var Bootstrap, Link, Nav, NavItem, React, Router;
+var Account, Bootstrap, CollapsibleNav, Link, MenuItem, Nav, NavDropdown, NavItem, Navbar, React, Router;
 
 React = require('react');
 
@@ -11,29 +11,65 @@ Bootstrap = require('react-bootstrap');
 
 Nav = Bootstrap.Nav;
 
+Navbar = Bootstrap.Navbar;
+
 NavItem = Bootstrap.NavItem;
+
+NavDropdown = Bootstrap.NavDropdown;
+
+MenuItem = Bootstrap.MenuItem;
+
+CollapsibleNav = Bootstrap.CollapsibleNav;
+
+Account = require('./account');
 
 module.exports = React.createClass({
   displayName: 'menu',
+  contextTypes: {
+    router: React.PropTypes.func
+  },
   handleSelect: function(e) {
     return console.log(e);
   },
   render: function() {
     var me;
     me = this;
-    return React.createElement(Nav, {
-      "bsStyle": 'pills',
-      "activeKey": 2.,
+    return React.createElement(Navbar, {
+      "brand": React.createElement(Link, {
+        "to": "dashboard"
+      }, "Yokoso"),
+      "toggleNavKey": 0.
+    }, React.createElement(CollapsibleNav, {
+      "eventKey": 0.
+    }, React.createElement(Nav, {
+      "navbar": true,
       "onSelect": me.handleSelect
     }, React.createElement(NavItem, {
       "eventKey": 1.,
-      "href": '/home'
-    }, "NavItem 1 content"), React.createElement(NavItem, {
+      "href": '#'
+    }, "Link"), React.createElement(NavItem, {
       "eventKey": 2.,
-      "title": 'Item'
-    }, "NavItem 2 content"), React.createElement(NavItem, {
+      "href": '#'
+    }, "Link")), React.createElement(Nav, {
+      "navbar": true,
+      "right": true
+    }, React.createElement(NavDropdown, {
       "eventKey": 3.,
-      "disabled": true
-    }, "NavItem 3 content"));
+      "title": 'Login',
+      "id": 'nav-brand-dropdown'
+    }, React.createElement(MenuItem, {
+      "eventKey": '1'
+    }, React.createElement(Link, {
+      "to": "account",
+      "handler": Account
+    }, "Sign up")), React.createElement(MenuItem, {
+      "eventKey": '2'
+    }, "Another action"), React.createElement(MenuItem, {
+      "eventKey": '3'
+    }, "Something else here"), React.createElement(MenuItem, {
+      "divider": true
+    }), React.createElement(MenuItem, {
+      "eventKey": '4'
+    }, "Separated link")))));
   }
 });

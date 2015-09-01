@@ -4,6 +4,7 @@ Addons = require 'react/addons'
 Router = require 'react-router'
 Bootstrap = require 'react-bootstrap'
 Link = Router.Link
+Menu = require './menu'
 Col = Bootstrap.Col
 Input = Bootstrap.Input
 ButtonInput = Bootstrap.ButtonInput
@@ -56,7 +57,8 @@ module.exports = React.createClass
       password: $set: e.target.value
   render: ->
     me = this
-    <div id='account'>
+    <div id='App'>
+      <Menu />
       <Col md={6} xsOffset={3}>
         <h1>Sign up</h1>
         <form onSubmit={me.submit_form}>

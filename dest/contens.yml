@@ -1,0 +1,9 @@
+dashboard:
+  jumbotron:
+    title: Hello World
+    body: >-
+      ここにテキストを書きます。
+      文章はこうやって書きます。
+
+    
+  

@@ -1,0 +1,13 @@
+dashboard:
+  jumbotron:
+    title: Hello World
+    body: >-
+      We say "Yokoso" !
+      Yokoso is "Welcome" in Japanese.
+    more:
+      label: Lean more
+      button:
+        bsStyle: primary
+
+    
+  

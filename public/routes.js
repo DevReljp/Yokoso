@@ -18,7 +18,8 @@ SignIn = require('./views/sign_in.js');
 routes = module.exports = React.createElement(Router.Route, {
   "path": '/',
   "handler": App
-}, React.createElement(Router.DefaultRoute, {
+}, React.createElement(Router.Route, {
+  "path": '/',
   "name": 'dashboard',
   "handler": Dashboard
 }), React.createElement(Router.Route, {

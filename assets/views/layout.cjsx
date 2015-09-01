@@ -4,8 +4,12 @@ React = require 'react'
 Menu = require './menu.js'
 Bootstrap = require 'react-bootstrap'
 Row = Bootstrap.Row
+Col = Bootstrap.Col
+Grid = Bootstrap.Grid
 
 module.exports = React.createClass
+  contextTypes:
+    router: React.PropTypes.func
   render: ->
     <html>
       <head>
@@ -16,12 +20,7 @@ module.exports = React.createClass
         <link rel="stylesheet" href="/stylesheets/application.css" />
       </head>
       <body>
-        <div class="container">
-          <Menu />
-          <Row>
-            {this.props.children}
-          </Row>
-	      </div>
+        {this.props.children}
       </body>
       <script src='/javascripts/application.js'></script>
     </html>
